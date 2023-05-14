@@ -33,8 +33,9 @@ int _erratoi(char *s)
 * @info: Parameter & return info struct
 * @estr: string containing specific error type
 * Return: 0 if no num in string, convert num otherwise
-*        -1 on error 
+*        -1 on erro
 */
+
 void print_error(info_t *info, char *estr)
 {
 	_eputs(info->fname);
