@@ -1,64 +1,67 @@
 #include "shell.h"
 
 /**
- * _strlen - function that returns length of string
- * @n: The string
- * Return: The int length of the string
- */
-
-int _strlen(char *n)
+* _strlen - return the length of the string
+* @s: check string length
+*
+* Return: integer length of string
+*/
+int _strlen(char *s)
 {
-	int j = 0;
+	int i = 0;
 
-	if (!n)
+	if (!s)
 		return (0);
+
 	while (*s++)
-		j++;
-	return (j);
+		i++;
+	return (i);
 }
 
 /**
- * _strcmp - Comparison of two strangs
- * @n1: First strang
- * @n2: Second strang
- * Return: positive if n1 > n2, negative if n1 < n2, 0 if n1 == n2
- */
-int _strcmp(char *n1, char *n2)
+* _strcmp - performs lexicogarphic comparison of two strings.
+* @s1: the first string
+* @s2: the second string
+*
+* Return: negative if s1 < s2, positive if s1 > s2, zero if s1 == s2
+*/
+int _strcmp(char *s1, char *s2)
 {
-	while (*n1 && *n2)
+	while (*s1 && *s2)
 	{
-		if (*n1 != *n2)
-			return (*n1 - *n2);
-		n1++;
-		n2++;
+		if (*s1 != *s2)
+			return (*s1 - *s2);
+		s1++;
+		s2++;
 	}
-	if (*n1 == *n2)
+	if (*s1 == *s2)
 		return (0);
 	else
-		return (*n1 < *n2 ? -1 : 1);
+		return (*s1 < *s2 ? -1 : 1);
 }
 
 /**
- * starts_with - function that checks if the needle starts with haystack
- * @haystack: The string to be searched
- * @needle: Substring to be found
- * Return: The address of the next character of haystack or NULL
- */
-
-int *starts_with(const char *haystack, const char *needle)
+* starts_with - checks if needle starts with haystack
+* @haystack: string to search
+* @needle: the substring to find
+*
+* Return: address of next character of haystack or NULL
+*/
+char *starts_with(const char *haystack, const char *needle)
 {
 	while (*needle)
-	if (*needle++ != *haystack++)
-		return (NULL);
+		if (*needle++ != *haystack++)
+			return (NULL);
 	return ((char *)haystack);
 }
 
 /**
- * _strcat - Connects two strings
- * @dest: Buffer destination
- * @src: Source buffer
- * Return: Pointer to the buffer destionation
- */
+* _strcat - concatenate two strings
+* @dest: the destination buffer
+* @src: the source buffer
+*
+* Return: point to destination buffer
+*/
 char *_strcat(char *dest, char *src)
 {
 	char *ret = dest;
