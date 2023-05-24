@@ -261,5 +261,7 @@ int replace_alias(info_t *info);
 int replace_vars(info_t *info);
 int replace_string(char **old, char *new);
 
+char **strtow(char *str, char *d);
+char **strtow2(char *str, char d);
 #endif
 
