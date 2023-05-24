@@ -81,4 +81,33 @@ char *find_path(info_t *info, char *pathstr, char *cmd);
 
 int main(int ac, char **av);
 
+free(void **ptr)
+
+int is_cmd(info_t *info, char *path);
+char *dup_chars(char *pathstr, int start, int stop);
+char *find_path(info_t *info, char *pathstr, char *cmd);
+
+char *_memset(char *i, char j, unsigned int c);
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+void ffree(char **nn);
+
+char *_strcpy(char *dest, char *src);
+char *_strdup(const char *str);
+void _puts(char *str);
+int _putchar(char c);
+
+int *starts_with(const char *haystack, const char *needle);
+char *_strcat(char *dest, char *src);
+
+int hsh(info_t *info, char **av);
+int find_builtin(info_t *info);
+void find_cmd(info_t *info);
+void fork_cmd(info_t *info);
+
+int is_chain(info_t *info, char *buf, size_t *i);
+void check_chain(info_t *info, char *buf, size_t *i, size_t c, size_t len);
+int replace_alias(info_t *info);
+int replace_vars(info_t *info);
+int replace_string(char **old, char *new);
+
 #endif
