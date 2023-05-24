@@ -17,9 +17,15 @@ char **strtow(char *str, char *i)
 		return (NULL);
 	if (!i)
 		i = " ";
+<<<<<<< HEAD
 	for (n = 0; str[n] != '\0'; n++)
 		if (!is_delim(str[n], i) && (is_delim(str[n + 1], i) || !str[n + 1]))
 			numwords++;
+=======
+	for (n = 0; str[n] != '\0' n++)
+	if (!is_delim(str[n], i) && (is_delim(str[n + 1], i) || !str[n + 1]))
+		numwords++;
+>>>>>>> 88af9511d7a22127b8ebabc68515accb1e5bd520
 
 	if (numwords == 0)
 		return (NULL);
@@ -42,8 +48,13 @@ char **strtow(char *str, char *i)
 			return (NULL);
 		}
 		for (c = 0; c < h; c++)
+<<<<<<< HEAD
 			j[y][c] = str[n++];
 		j[y][c] = 0;
+=======
+		       j[y][c] = str[y++];
+		j[y][y] = 0;
+>>>>>>> 88af9511d7a22127b8ebabc68515accb1e5bd520
 	}
 	j[y] = NULL;
 	return (j);
